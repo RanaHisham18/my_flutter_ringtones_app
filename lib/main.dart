@@ -74,7 +74,7 @@ class RingToneClassState extends State<RingToneClass> {
                     child: ElevatedButton(
                       onPressed: (){
                         player.play(AssetSource('music-2.mp3'));
-                      }, child: const Text("Play me"),
+                      }, child: Icon(Icons.play_arrow),
                     ),
                   ),
                   Padding(
@@ -82,7 +82,7 @@ class RingToneClassState extends State<RingToneClass> {
                     child: ElevatedButton(
                       onPressed: (){
                         player.stop();
-                      }, child: const Text("Stop me"),
+                      }, child: Icon(Icons.pause),
                     ),
                   ),
                 ],
