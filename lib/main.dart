@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
       backgroundColor: Colors.white70,
         appBar: AppBar(
-          title: Text('My Flutter Ringtones'),
+          title: const Text('My Flutter Ringtones'),
           backgroundColor: Colors.indigoAccent,
         ),
         body: RingToneClass()
@@ -44,7 +44,7 @@ class RingToneClassState extends State<RingToneClass> {
     ElevatedButton(
     onPressed: (){
     player.play(AssetSource('music-1.mp3'));
-    }, child: Text("Play me"),
+    }, child: const Text("Play me"),
     ),
     ),
     Padding(
@@ -52,32 +52,41 @@ class RingToneClassState extends State<RingToneClass> {
     child: ElevatedButton(
     onPressed: (){
     player.stop();
-    }, child: Text("Stop me"),
+    }, child: const Text("Stop me"),
     ),
     ),
     ],
     ),
         ),
           Center(
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: ElevatedButton(
-                    onPressed: (){
-                      player.play(AssetSource('music-2.mp3'));
-                    }, child: Text("Play me"),
+            child: Container(
+              margin: const EdgeInsets.all(10.0),
+
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20)),
+                color: Colors.deepOrangeAccent,
+
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        player.play(AssetSource('music-2.mp3'));
+                      }, child: const Text("Play me"),
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: ElevatedButton(
-                    onPressed: (){
-                      player.stop();
-                    }, child: Text("Stop me"),
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: ElevatedButton(
+                      onPressed: (){
+                        player.stop();
+                      }, child: const Text("Stop me"),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
     ], ),
